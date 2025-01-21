@@ -1,0 +1,492 @@
+/* -------- Definição de variáveis de cores (Tema Global) -------- */
+:root {
+  /* Cor de fundo geral */
+  --background-color: #000;
+  /* Cor do texto geral */
+  --text-color: #fff;
+  /* Cor de fundo do cabeçalho e rodapé */
+  --header-bg: #8B0000;
+  --footer-bg: #8b0000;
+  /* Cores de botões */
+  --button-bg: #BC3908; /* Botão padrão */
+  --button-hover-bg: #F6AA1C; /* Botão ao passar o mouse */
+  --button-card-bg: #F6AA1C; /* Botão nos cartões */
+  --button-text-color: #000; /* Cor do texto dos botões */
+  /* Cores do container e vídeo */
+  --container-color-bg: #660708;
+  --video-color-bg: #333;
+}
+
+
+/* -------- Estilos Gerais do Corpo -------- */
+body {
+  margin: 0; /* Remove espaçamento padrão */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  background-color: var(--background-color); /* Cor de fundo */
+  color: var(--text-color); /* Cor do texto */
+}
+
+/* -------- Cabeçalho -------- */
+header {
+  background-color: var(--header-bg); /* Cor de fundo */
+  display: flex; /* Layout flexível */
+  flex-wrap: wrap; /* Permite que os itens se reorganizem em várias linhas */
+  justify-content: space-between; /* Espaço entre os itens */
+  align-items: center; /* Alinha itens no centro verticalmente */
+  max-width: 100%; /* Largura máxima do cabeçalho */
+  padding: 10px 20px; /* Espaçamento interno */
+  margin: 0 auto; /* Centraliza no eixo horizontal */
+  width: 100vw; /* Ocupa a largura completa da janela */
+  box-sizing: border-box; /* Inclui bordas e preenchimento no tamanho total */
+  overflow: hidden; /* Esconde qualquer conteúdo que exceda */
+}
+
+/* Estilo para o logo no cabeçalho */
+header .logo {
+  font-size: 1.5rem; /* Tamanho da fonte do logo */
+  max-width: 30%; /* Largura máxima */
+  flex-shrink: 1; /* Reduz o tamanho caso o espaço seja limitado */
+  color: var(--text-color); /* Cor do texto */
+}
+
+/* Garante que o cabeçalho e links sejam incluídos no cálculo de largura */
+header,
+.nav-links {
+  box-sizing: border-box;
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+/* -------- Links de Navegação -------- */
+.nav-links {
+  flex-grow: 1; /* Permite que cresça para ocupar espaço */
+  display: flex; /* Layout flexível */
+  flex-wrap: wrap; /* Permite reorganizar em múltiplas linhas */
+  justify-content: flex-end; /* Alinha à direita */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 10px; /* Espaçamento entre links */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Remove marcadores de lista */
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.nav-links li {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------- Botões de Navegação -------- */
+.nav-button {
+  display: inline-block; /* Exibe como bloco inline */
+  text-align: center; /* Centraliza o texto */
+  white-space: nowrap; /* Impede quebra de linha */
+  text-decoration: none; /* Remove sublinhado */
+  padding: 10px; /* Espaçamento interno */
+  background-color: var(--button-bg); /* Cor de fundo */
+  color: var(--button-text-color); /* Cor do texto */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-weight: bold; /* Negrito */
+  transition: background-color 0.3s ease, width 0.3s ease; /* Animações suaves */
+}
+
+/* Efeito de hover nos botões de navegação */
+.nav-button:hover {
+  background-color: var(--button-hover-bg); /* Muda a cor ao passar o mouse */
+}
+
+/* -------- Container Principal -------- */
+.container {
+  background-color: var(--container-color-bg); /* Cor de fundo */
+  display: flex; /* Layout flexível */
+  flex-direction: column; /* Alinha itens verticalmente */
+  align-items: center; /* Centraliza itens horizontalmente */
+  justify-content: space-around; /* Espaça uniformemente */
+  padding: 20px; /* Espaçamento interno */
+  gap: 20px; /* Espaçamento entre elementos */
+  width: 100%;
+  box-sizing: border-box; /* Inclui bordas no cálculo de largura */
+}
+
+/* -------- Seções de Introdução -------- */
+.intro-section {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Centraliza itens verticalmente */
+  justify-content: space-between; /* Espaça uniformemente */
+  flex-wrap: wrap; /* Permite reorganizar elementos em múltiplas linhas */
+  gap: 20px; /* Espaçamento entre elementos */
+  width: 100%; /* Ocupa a largura completa */
+  padding: 20px; /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui bordas no tamanho total */
+}
+
+/* Texto de introdução */
+.intro {
+  max-width: 100%; /* Largura máxima */
+  color: var(--text-color); /* Cor do texto */
+}
+
+.intro h2 {
+  font-size: 2rem; /* Tamanho grande do título */
+  margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+.intro p {
+  line-height: 1.6; /* Espaçamento entre linhas */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+/* -------- Configuração de Vídeo -------- */
+.video-placeholder {
+  width: 100%; /* Ocupa a largura completa */
+  max-width: 500px; /* Largura máxima */
+  height: auto; /* Altura ajustada proporcionalmente */
+  aspect-ratio: 16/9; /* Proporção do vídeo */
+  background-color: var(--video-color-bg); /* Cor de fundo */
+  border-radius: 5px; /* Bordas arredondadas */
+  flex-shrink: 0; /* Não reduz se o espaço for limitado */
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  background-color: var(--background-color);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ffba08;
+  padding-bottom: 5px;
+  width: max-content;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center; /* Centraliza o grid dentro do contêiner */
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto; /* Centraliza o contêiner no centro da tela */
+  max-width: 1200px; /* Define uma largura máxima */
+  padding: 20px; /* Garante espaçamento interno nas laterais */
+  width: 100%;
+}
+
+.card {
+  background-color: var(--video-color-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: left; /* Alinha os textos do card à esquerda */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Garante que o card ocupe a largura do grid */
+  max-width: 380px; /* Limita a largura máxima do card */
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.card img {
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.card p {
+  margin: 12px 0;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha o texto à esquerda */
+  text-align: left;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.card-buttons button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-card-bg);
+  color: var(--button-text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-buttons button img {
+  width: 20px;
+  height: 20px;
+}
+
+.card-buttons button:hover {
+  background-color: var(--button-hover-bg); /* Cor ao passar o mouse */
+  transform: scale(1.05);
+}
+
+.card-buttons button:first-child {
+  border-right: 0.5px solid #000; /* Linha divisória entre os botões */
+}
+
+.card-buttons button:last-child {
+  border-left: 0.5px solid #000;
+}
+
+button, .nav-button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .nav-button:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  width: 100%;
+  position: sticky; /* Mantém o rodapé visível na parte inferior */
+  bottom: 0; /* Fixa no final da tela */
+}
+
+.video-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.video-card {
+  background-color: var(--card-bg);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 150px;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.video-form {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.video-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--input-border-color);
+}
+
+.video-form button {
+  padding: 10px 15px;
+  background-color: var(--header-footer-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.video-form button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+}
+
+/* -------- Estilos Responsivos -------- */
+
+/* Telas até 1024px (ajustes para telas maiores) */
+@media (max-width: 1024px) {
+  header {
+    flex-wrap: wrap; /* Permite reorganizar elementos do cabeçalho em linhas extras */
+  }
+
+  .logo {
+    font-size: 1.2rem; /* Reduz o tamanho do logo */
+    max-width: 25%; /* Define um limite de largura menor para o logo */
+  }
+
+  .nav-button {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte dos botões de navegação */
+    padding: 8px 15px; /* Reduz o espaçamento interno */
+  }
+}
+
+/* Telas entre 768px e 1024px */
+@media (max-width: 1024px) and (min-width: 769px) {
+  header {
+    padding: 10px 15px; /* Ajusta o espaçamento interno do cabeçalho */
+    max-width: 90%; /* Reduz a largura máxima do cabeçalho */
+  }
+
+  .nav-links {
+    gap: 10px; /* Reduz o espaço entre os links */
+  }
+
+  .nav-button {
+    padding: 8px 15px; /* Reduz o espaçamento interno */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr); /* Mostra 3 cartões por linha */
+    gap: 15px; /* Ajusta o espaçamento entre os cartões */
+  }
+
+  .card {
+    width: 150px;
+    height: 150px; /* Define tamanho fixo para os cartões */
+  }
+
+  .intro h2 {
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .intro p {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte do texto */
+  }
+}
+
+/* Telas entre 481px e 768px */
+@media (max-width: 768px) and (min-width: 481px) {
+  header {
+    padding: 8px 10px;
+    flex-direction: column; /* Alinha o conteúdo em coluna */
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logo {
+    text-align: center; /* Centraliza o logo */
+    width: 100%; /* Permite o logo ocupar toda a largura */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Alinha os links verticalmente */
+    align-items: center;
+    gap: 8px; /* Reduz o espaço entre os links */
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* Mostra 2 cartões por linha */
+    gap: 10px; /* Ajusta o espaçamento entre os cartões */
+  }
+
+  .card {
+    width: 200px;
+    height: auto; /* Permite altura automática */
+  }
+
+  .video-placeholder {
+    width: 90%; /* Reduz o tamanho do vídeo para caber na tela */
+    aspect-ratio: 16/9; /* Mantém a proporção widescreen */
+  }
+
+  .intro h2 {
+    font-size: 1.5rem; /* Ajusta o tamanho do título */
+  }
+
+  .intro p {
+    font-size: 0.8rem; /* Ajusta o tamanho do texto */
+  }
+}
+
+/* Telas até 480px (muito pequenas) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px; /* Ajusta o espaçamento entre os links */
+  }
+
+  .cards {
+    grid-template-columns: repeat(1, 1fr); /* Mostra 1 cartão por linha */
+    gap: 10px;
+    padding: 0 10px; /* Adiciona espaçamento interno */
+  }
+
+  .card {
+    width: calc(100% - 20px); /* Ajusta a largura do cartão */
+    max-width: 300px; /* Define um limite máximo */
+    margin: 0 auto; /* Centraliza os cartões */
+  }
+
+  .intro h2 {
+    font-size: 1rem; /* Ajusta o tamanho do título */
+  }
+
+  .intro p {
+    font-size: 0.8rem; /* Ajusta o tamanho do texto */
+  }
+
+  .video-placeholder {
+    width: 100%; /* Permite que o vídeo ocupe toda a largura */
+    aspect-ratio: 16/9; /* Mantém a proporção widescreen */
+  }
+}
+
+/* Ajustes para telas largas, mas com pouca altura */
+@media (max-height: 600px) {
+  header {
+    padding: 5px 10px; /* Reduz o espaçamento interno */
+  }
+
+  .cards {
+    gap: 10px; /* Ajusta o espaçamento entre os cartões */
+  }
+
+  footer {
+    font-size: 0.8rem; /* Diminui o tamanho da fonte */
+    padding: 5px; /* Reduz o espaçamento interno */
+  }
+}
