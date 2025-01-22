@@ -80,7 +80,7 @@ This project is licensed under the MIT License.
 ---
 
 ## 👤 **Autor / Author**  
-- **[Seu Nome](https://github.com/seu-usuario)**  
+- **[Richard custodio](https://github.com/richardcustodio)**  
   Desenvolvedor em aprendizado contínuo e apaixonado por React.js.  
   A developer in continuous learning, passionate about React.js.
 
